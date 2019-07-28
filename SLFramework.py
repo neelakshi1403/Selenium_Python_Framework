@@ -20,5 +20,6 @@ fl.ValDropdown(driver,"6",data.date,"//*[@name='birthday_day']/option",ResPath)
 fl.Dropdown(driver,"7","4","birthday_day",ResPath)
 fl.wait(5,"8",ResPath)
 fl.quit(driver,"9",ResPath)
+print("End")
 #driver.get("http://www.facebook.com")
 
