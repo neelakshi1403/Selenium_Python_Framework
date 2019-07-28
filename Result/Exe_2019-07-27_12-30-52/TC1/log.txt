@@ -1,0 +1,4 @@
+Step:1 open_url :: executed successfully -- PASS
+Step:2 click:: could not be executed -- FAIL
+Step:3 validateText:: could not be executed -- FAIL
+Step:4 Dropdown:: could not be executed -- FAIL

@@ -7,6 +7,8 @@ Created on Mon Apr 22 15:54:26 2019
 import os
 from selenium import webdriver
 import datetime
+from selenium.webdriver.support.ui import Select
+import time
 
 
 #Initializing driver
@@ -98,5 +100,89 @@ def validateText(driver,step,expTxt,xpath,ResPath):
         log.write("\n")
         log.close()
             
-    
-    
+def Dropdown(driver,step,expVal,name,ResPath):
+    method_name="Dropdown"
+    try:
+        actualVal=Select(driver.find_element_by_name(name))
+        actualVal.select_by_index("4")
+        print("Step:",step," ",method_name," :: executed successfully -- PASS")
+        log=open(ResPath+"\\"+"log.txt", "a")
+        log.write("Step:"+step+" "+method_name+" :: executed successfully -- PASS")
+        log.write("\n")
+        log.close()
+           
+    except:
+        print("Step:",step," ",method_name,":: could not be executed -- FAIL")
+        log=open(ResPath+"\\"+"log.txt", "a")
+        log.write("Step:"+step+" "+method_name+":: could not be executed -- FAIL")
+        log.write("\n")
+        log.close()
+
+def ValDropdown(driver,step,expVal,xpath,ResPath):
+    method_name="ValDropdown"
+    try:
+        actualVal=driver.find_elements_by_xpath(xpath)
+        print("C")
+        for el in actualVal:
+            el.text
+            if el.text in expVal:
+                print("Step:",step," ",method_name," :: executed successfully -- PASS")
+        log=open(ResPath+"\\"+"log.txt", "a")
+        log.write("Step:"+step+" "+method_name+" :: executed successfully -- PASS")
+        log.write("\n")
+        log.close()
+             
+           
+    except:
+        
+        driver.save_screenshot(ResPath+"\\"+"Step"+step+".png")
+        print("Expected and Actual text are not same")
+        print("Step:",step," ",method_name,":: could not be executed -- FAIL")
+        log=open(ResPath+"\\"+"log.txt", "a")
+        log.write("Step:"+step+" "+method_name+":: could not be executed -- FAIL")
+        log.write("\n")
+        log.close()
+
+
+"""
+Method Name :: wait
+Method Function :: Pause execution for given amount of time
+Company Name :: Cognizant
+Developed by :: Sayan
+Emp Id :: 555186
+Example Call :: FunctionLibrary.wait(5) //where 5 is parameter in seconds
+
+"""
+        
+def wait(wait_time,step,ResPath):
+    method_name="wait"
+    try:
+        time.sleep(wait_time)
+        log=open(ResPath+"\\"+"log.txt", "a")
+        log.write("Step:"+step+" "+method_name+" :: executed successfully -- PASS")
+        log.write("\n")
+        log.close()
+            
+    except:
+        print("Step:",step," ",method_name,":: could not be executed -- FAIL")
+        log=open(ResPath+"\\"+"log.txt", "a")
+        log.write("Step:"+step+" "+method_name+":: could not be executed -- FAIL")
+        log.write("\n")
+        log.close()
+
+def quit(driver,step,ResPath):
+    method_name='quit'
+    try:
+        driver.quit()
+        log=open(ResPath+"\\"+"log.txt", "a")
+        log.write("Step:"+step+" "+method_name+" :: executed successfully -- PASS")
+        log.write("\n")
+        log.close()
+            
+    except:
+        print("Step:",step," ",method_name,":: could not be executed -- FAIL")
+        log=open(ResPath+"\\"+"log.txt", "a")
+        log.write("Step:"+step+" "+method_name+":: could not be executed -- FAIL")
+        log.write("\n")
+        log.close()
+        

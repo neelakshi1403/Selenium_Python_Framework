@@ -1,0 +1,3 @@
+Step:1 open_url :: executed successfully -- PASS
+Step:2 click :: executed successfully -- PASS
+Step:3 validateText:: could not be executed -- FAIL

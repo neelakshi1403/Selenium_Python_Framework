@@ -1,0 +1,9 @@
+Step:1 open_url :: executed successfully -- PASS
+Step:2 click :: executed successfully -- PASS
+Step:3 validateText :: executed successfully -- PASS
+Step:4 Dropdown :: executed successfully -- PASS
+Step:5 ValDropdown :: executed successfully -- PASS
+Step:6 ValDropdown :: executed successfully -- PASS
+Step:7 Dropdown :: executed successfully -- PASS
+Step:8 wait :: executed successfully -- PASS
+Step:9 quit :: executed successfully -- PASS
